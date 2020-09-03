@@ -173,7 +173,7 @@ app.layout = html.Div(
                                         className="mini_container",
                                     ),
                                     html.Div(
-                                        [html.H6(id="closing_text"), html.P("Closing Balaace")],
+                                        [html.H6(id="closing_text"), html.P("Closing Balance")],
                                         id="closing",
                                         className="mini_container",
                                     ),
