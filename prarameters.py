@@ -20,7 +20,7 @@ def simple(simple_capital,buy_trade_price,sell_trade_price):
 #   inital capital is the ammount to be used during buy trades
     inital_capital = simple_capital
     simple_qty = []
-    simple_profit = []
+    simple_pnl = []
     simple_loss = []
     for row in range(len(buy_trade_price)):
         simple_qty.append(int(simple_capital/buy_trade_price[row]))
@@ -29,13 +29,14 @@ def simple(simple_capital,buy_trade_price,sell_trade_price):
         simple_capital = simple_capital + y
         if x > inital_capital:
             profit = x - simple_capital
-            simple_profit.append(profit)
+            simple_pnl.append(profit)
             simple_capital = inital_capital
         elif x < inital_capital:
             loss = x - simple_capital
+            simple_pnl.append(loss)
             simple_capital = simple_capital + loss
-    cumm_sum = sum(simple_profit)
-    max_trade_return = max(simple_profit) if len(simple_profit) != 0 else 0
+    cumm_sum = sum(simple_pnl)
+    max_trade_return = max(simple_pnl) if len(simple_pnl) != 0 else 0
     return cumm_sum, max_trade_return
 
 def _complex(initial_capital,buy_trade_price,sell_trade_price):
