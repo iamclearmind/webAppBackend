@@ -33,9 +33,8 @@ def simple(simple_capital,buy_trade_price,sell_trade_price):
             simple_capital = inital_capital
         elif x < inital_capital:
             loss = x - simple_capital
-            simple_loss.append(loss)
             simple_capital = simple_capital + loss
-    cumm_sum = sum(simple_profit) if len(simple_profit) !=0 else sum(simple_loss) if len(simple_loss) !=0 else 0
+    cumm_sum = sum(simple_profit)
     max_trade_return = max(simple_profit) if len(simple_profit) != 0 else 0
     return cumm_sum, max_trade_return
 
